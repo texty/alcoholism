@@ -1,0 +1,88 @@
+@font-face {
+  font-family: 'ProximaNova';
+  src: url("../font/proxima_regular/proxima-nova-regular.eot");
+  src: url("../font/proxima_regular/proxima-nova-regular.eot?#iefix") format("embedded-opentype"), url("../font/proxima_regular/proxima-nova-regular.woff2") format("woff2"), url("../font/proxima_regular/proxima-nova-regular.woff") format("woff"), url("../font/proxima_regular/proxima-nova-regular.ttf") format("truetype"), url("../font/proxima_regular/proxima-nova-regular.svg#youworkforthem") format("svg");
+  font-weight: 400;
+  font-style: normal; }
+body {
+  font-family: 'Open Sans', sans-serif; }
+
+header {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  display: flex;
+  z-index: 1000; }
+
+h3 {
+  color: #e6e6e6;
+  font-size: 30px;
+  text-align: center;
+  width: 50%;
+  margin: auto; }
+
+#subtitle {
+  opacity: 0; }
+
+.text {
+  color: #e6e6e6;
+  width: 50%;
+  font-size: 20px;
+  margin: 100px auto 50px auto; }
+
+#scroll {
+  position: relative;
+  width: 100%;
+  margin: 0 0 100px auto;
+  display: grid;
+  grid-template-columns: 45% auto; }
+  #scroll .buttons {
+    min-height: 30px;
+    margin: 10px auto;
+    max-width: max-content;
+    width: auto;
+    display: flex; }
+
+.scroll__graphic {
+  grid-column: 1/3;
+  grid-row: 1/2;
+  width: 100% !important;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+  max-height: 100vh;
+  z-index: 10; }
+  @media (hover: none) and (orientation: portrait) {
+    .scroll__graphic {
+      height: 50vh;
+      top: 50px;
+      z-index: 1; } }
+
+.scroll__text {
+  grid-column: 1/3;
+  width: 50%;
+  margin: auto;
+  grid-row: 1/2;
+  pointer-events: none;
+  z-index: 100; }
+  @media (max-width: 800px) {
+    .scroll__text {
+      width: 90%;
+      margin: auto; } }
+  .scroll__text .step {
+    margin-top: 80vh;
+    margin-bottom: 50vh; }
+  .scroll__text .step div {
+    padding: 20px;
+    line-height: 1.6;
+    background-color: rgba(34, 34, 34, 0.9); }
+    @media (hover: none) and (orientation: portrait) {
+      .scroll__text .step div {
+        background-color: rgba(34, 34, 34, 0.9); } }
+  .scroll__text p {
+    font-size: 20px;
+    color: #e6e6e6; }
+
+/*# sourceMappingURL=styles.css.map */

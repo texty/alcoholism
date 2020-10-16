@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link href="css/styles.css" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.2/p5.min.js"></script>-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/3.0.11/pixi.min.js"></script>-->
+    <script src="lib/d3v5.min.js"></script>
+    <script type="text/javascript" src="lib/scrollama.min.js"></script>
+
+
+    <script src="https://pixijs.download/release/pixi.min.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/pixi-filters@latest/dist/pixi-filters.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+</head>
+<style>
+
+    body {
+        background-color: #252525;
+    }
+
+    #chart {
+        width: 100%;
+        /*height: 100vh;*/
+    }
+    canvas {
+        /*height: 100vh;*/
+        width: 100%;
+
+    }
+
+    #scene {
+        height: 1vh;
+    }
+
+
+</style>
+
+<body>
+<!--<button id="button0">show matrix</button>-->
+<!--<button id="button1">show alco</button>-->
+<!--<button id="button2">show barChart</button>-->
+<!--<button id="button3">show image</button>-->
+<!--<canvas id="scene"></canvas>-->
+
+<!--</div>-->
+<header style="">
+    <h3 id="subtitle" style="">У 2019 р. понад півмільйони українців лікувались від психічних розладів, спричинених вживанням алкоголю</h3>
+</header>
+
+<!--<p class="text">За даними Служби психічного здоровʼя у 2019 році лікування у закдадах психіатричної допомоги пройшло понад 1 млн 700 тис. українців, майже третина з них через психічні розлади, повʼяазні із вживанням алкоголю</p>-->
+
+<section id='scroll' class="desktop-only">
+    <div class='scroll__graphic sticky'>
+        <div id="chart">
+            <canvas id="scene"></canvas>
+        </div>
+
+        <!--<div id="chart"></div>-->
+        <!--<div id="loading-background" class=''>-->
+            <!--<img id="spinner" src="img/wait.gif" alt="Be patient..."/>-->
+        <!--</div>-->
+    </div>
+
+    <div class='scroll__text'>
+        <div class='step' data-step='0' data-scrollama-index="0">
+            <div style="opacity:0;">
+
+
+            </div>
+        </div>
+
+        <div class='step' data-step='1' data-scrollama-index="1">
+            <div>
+                <p>Алкоголь доводить до психлікарень більше людей ніж будь-які інші психічні розлади. </p>
+
+            </div>
+        </div>
+
+
+
+        <div class='step' data-step='2' data-scrollama-index="2">
+            <div>
+                <p>У 2019 році ця цифра склала 587 тис. осіб з 1.7 млн всіх пацієнтів, тобто третину. В пʼять разів менше осіб отримують розлади, вживаючи наркотичні речовини. Реальні масштаби алкоголізму важко обрахувати, адже в статистику потрапляють одиниці. Причина в особливій культурі споживання алкоголю.  Селфі з пляшкою вина чи коньяку точно отримає більше лайків ніж серйозний пост про шкоду вживання алкоголю. </p>
+            </div>
+        </div>
+
+        <div class='step' data-step='3' data-scrollama-index="3">
+            <div>
+                <p>Алкогольний абстинентний синдром, який є основною причиною звернення, розвивається після раптового припинення вживання алкогольних напоїв, або під час швидкого зменшення дози вживаного алкоголю.</p>
+            </div>
+        </div>
+
+
+        <div class='step' data-step='4' data-scrollama-index="3">
+            <div>
+                <p>"Алкоголь в малих дозах бєзврєдєн в любом колічєствє", - повторюють мійльони наших співгромадян цокаючись стопками водочки, коньячку чи вина.   Ми пʼємо на свята, коли зустрічаємось з друзями, на честь закінчення робочого тижня, коли добре, коли погано, за компанію і наодинці, споживаючи, за даними.... 8.6 літрів чистого алкоголю в рік на людину.</p>
+            </div>
+        </div>
+
+
+
+        <div class='step' data-step='5' data-scrollama-index="4">
+            <div>
+                <p>КВ «Центрі психічного здоров'я та моніторингу наркотиків та алкоголю» МОЗ України, який власне збирає і публікує ці дані, кажуть, що цифри не повністю відображають реальну картину. З одного боку вони занижені, з іншого завищені. Адже заклади зацікавлені, щоб якнайдовше "вести" пацієнта, водночас чимала кількість людей, що потребують допомоги, залишаються поза увагою.</p>
+            </div>
+        </div>
+
+
+        <div class='step' data-step='6' data-scrollama-index="5">
+            <div>
+                <p>Очевидно, що до серйозних психічних розладів допиваються не всі. А з тих, хто допивається, не всі звертаються. Якщо алкоголик не бігає з вилами по селу, погрожуючи когось заколоти, то йому скоріше все не заважатимуть допитись до смерті. Минулого року, алкоголь відправив на той світ більше людей, ніж, наприклад, рак шлунку, пневммонія, цукровий діабет чи транспортні аварії. Десь стільки ж людей помирають від старості. </p>
+            </div>
+        </div>
+
+        <div class='step' data-step='7' data-scrollama-index="7">
+            <div>
+                <p>На психічні розлади припадає всього 16% смертей від алкоголю, найчастіше здає серце, печінка або ж отруєння неякісним алкоголем</p>
+            </div>
+        </div>
+
+        <div class='step' data-step='8' data-scrollama-index="8">
+            <div style="opacity:0;">
+
+            </div>
+        </div>
+
+
+
+    </div>
+</section>
+
+
+<!--<input id="copy" type="text" value="Невидима проблема" />-->
+
+
+<img id="img" style="max-width: 300px;" src="img/like.svg">
+
+<!--<canvas id="viewport"></canvas>-->
+
+
+<!--<script src="js/text_from_points.js"></script>-->
+<!--<script src="js/image_from_points.js"></script>-->
+<script src="js/another_way.js"></script>
+
+<!--<script src="js/try_by_myself.js"></script>-->
+</body>
+</html>
