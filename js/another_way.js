@@ -117,7 +117,7 @@ function step_00() {
 
 
 function step_01() {
-    const img = document.getElementById('img').style.display = "none";
+    // const img = document.getElementById('img').style.display = "none";
 
     for(let i = 0; i < labels.length; i++){
         renderer.stage.removeChild(labels[i]);
@@ -197,7 +197,7 @@ function step_01() {
 
         // TweenMax.to(dude, 3, {x: posX, y: posY });
         dude.alpha = 0.5;
-        TweenMax.to(dude.scale,1,{ x:2, y:2});
+       // TweenMax.to(dude.scale,1,{ x:2, y:2});
         // points[i].filters = [blurFilter1];
         // points[i].filters.blur = 0;
         //
