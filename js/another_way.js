@@ -7,7 +7,8 @@ var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
 const fontFamily = 'ProximaNova, sans-serif';
 const fontSize = 20;
 const whiteColor = 0xe6e6e6;
-const redColor = 0xff0000;
+const redColor = 0xed6746;
+const redHex = '#ed6746';
 
 //pixi vars
 const stage = new PIXI.Container();
@@ -85,6 +86,38 @@ function drawScene() {
             }
         }
     }
+}
+
+function drawPicture(){
+    const img = document.getElementById('img');
+    ctx.drawImage(img, ww/3, wh/4);
+    var data = ctx.getImageData(0, 0, ww, wh).data;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    for (let i = 0; i < ww; i += Math.round(ww / 250)) {
+        for (var j = 0; j < wh; j += Math.round(ww / 250)) {
+            if (data[((i + j * ww) * 4) + 3] > 250) {
+                const sprite = new PIXI.Graphics();
+                sprite.speed = 2 + Math.random() * 2;
+                sprite.lineStyle(0); //
+                sprite.beginFill(whiteColor, 1);
+                sprite.drawRect(0, 0, 4, 4);
+                sprite.endFill();
+                sprite.info = [{ x:i, y:j, level: 1 }];
+                points.push(sprite);
+                renderer.stage.addChild(sprite);
+
+                sprite.position.x = Math.random() * window.innerWidth;
+                sprite.position.y = Math.random() * window.innerHeight;
+
+                let xPos= sprite.info[0].x;
+                let yPos= sprite.info[0].y;
+                TweenMax.to(sprite, 5, {x: xPos, y: yPos });
+
+
+            }
+        }
+    }
+
 }
 
 
@@ -223,7 +256,7 @@ function step_02(){
 
     //датасет для першого графіка
     var chart1_bars = [
-        { content: "Внаслідок вживання алкоголю (587 937 осіб) ", start: 0, end: 587, amount: 587, fill: "red" },
+        { content: "Внаслідок вживання алкоголю (587 937 осіб) ", start: 0, end: 587, amount: 587, fill: "#ed6746" },
         { content: "Органічні, включно із симптоматичними (287 998)", amount: 288, fill: "white" },
         { content: "Розумова відсталість (225 896 осіб)", amount: 226, fill: "white" },
         { content: "Шизофренія, шизотипові та маячні розлади (175 690)", amount: 175, fill: "white" },
@@ -255,6 +288,14 @@ function step_02(){
         renderer.stage.addChild(label);
         TweenMax.to(label, 4, { alpha:1 });
     }
+
+    let chartTitle = new PIXI.Text("Причини психічних розладів (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    chartTitle.position.x = barChartPadding;
+    chartTitle.position.y = 0;
+    chartTitle.alpha = 1;
+    labels.push(chartTitle);
+    renderer.stage.addChild(chartTitle);
+
 
     //малюємо барчики
     for(let i = 0; i < chart1_bars.length; i++){
@@ -315,6 +356,14 @@ function step_04(){
         renderer.stage.addChild(label);
         TweenMax.to(label, 4, { alpha:1 });
     }
+
+    let chartTitle = new PIXI.Text("Розлади через вживання алкоголю (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    chartTitle.position.x = barChartPadding;
+    chartTitle.position.y = 0;
+    chartTitle.alpha = 1;
+    labels.push(chartTitle);
+    renderer.stage.addChild(chartTitle);
+
 
     //малюємо барчики
     for(let i = 0; i < chart2_bars.length; i++){
@@ -389,6 +438,13 @@ function step_06(){
         renderer.stage.addChild(label);
         TweenMax.to(label, 4, { alpha:1 });
     }
+
+    let chartTitle = new PIXI.Text("Деякі причини смертності (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    chartTitle.position.x = barChartPadding;
+    chartTitle.position.y = 0;
+    chartTitle.alpha = 1;
+    labels.push(chartTitle);
+    renderer.stage.addChild(chartTitle);
 
     //малюємо барчики
     for(let i = 0; i < chart3_bars.length; i++){
@@ -467,6 +523,13 @@ function step_07_2() {
         TweenMax.to(label, 4, { alpha:1 });
     }
 
+    let chartTitle = new PIXI.Text("Як саме вбиває алкоголь (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    chartTitle.position.x = barChartPadding;
+    chartTitle.position.y = 0;
+    chartTitle.alpha = 1;
+    labels.push(chartTitle);
+    renderer.stage.addChild(chartTitle);
+
     //малюємо барчики
     for(let i = 0; i < chart4_bars.length; i++){
         let item = chart4_bars[i];
@@ -523,20 +586,26 @@ function handleStepEnter(r) {
     if(r.index === 1) {
         step_01();
     }
-    if(r.index === 2) {
-        step_02()
+    if(r.index === 2){
+        // drawPicture()
     }
-    if(r.index === 3){
+    if(r.index === 5) {
+        step_05();
+        step_06();
+    }
+    if(r.index === 6){
+        step_07();
+        setTimeout(step_07_2(), 1000);
+
+    }
+    if(r.index === 7){
+        step_02();
+    } if(r.index === 8){
         step_03();
         setTimeout(step_04(), 1000)
-    }
-    if(r.index === 4){
-        step_05();
-    } if(r.index === 6){
-        step_06();
-    } if(r.index === 7){
-        step_07();
-        setTimeout(step_07_2(), 1000)
+    } if(r.index === 9){
+        step_03();
+        setTimeout(step_04(), 1000)
     }
 }
 

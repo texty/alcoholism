@@ -25,7 +25,9 @@
 $text-color: #e6e6e6;
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
+  //font-family: 'Open Sans', sans-serif;
 }
 
 header {
@@ -43,6 +45,7 @@ h3 {
   text-align: center;
   width: 50%;
   margin: auto;
+  font-weight: normal;
 }
 
 #subtitle {
@@ -124,3 +127,26 @@ h3 {
     color: $text-color;
   }
 }
+
+.italic {
+  //font-style: italic;
+}
+
+
+section#text {
+
+  width: 60%;
+  margin: auto;
+
+  p {
+    font-size: 18px;
+    color: #d5d5d5;
+  }
+
+  p.person {
+    color: #ed6746;
+    margin-top: 100px;
+    font-size: 25px;
+  }
+}
+
