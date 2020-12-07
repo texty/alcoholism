@@ -60,6 +60,8 @@ h3 {
       height: 50vh;
       top: 50px;
       z-index: 1; } }
+  .scroll__graphic #chart {
+    height: 100%; }
 
 .scroll__text {
   grid-column: 1/3;

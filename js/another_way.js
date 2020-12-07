@@ -20,7 +20,7 @@ var ctx = canvas.getContext("2d");
 
 var renderer = new PIXI.Application({
     width:  window.innerWidth,
-    height:  window.innerHeight,
+    height:  window.innerWidth < 800 ? window.innerHeight * 0.7 : window.innerHeight,
     setInteractive: true,
     antialias: true,
     backgroundColor: 0x252525
@@ -32,6 +32,8 @@ document.getElementById("chart").append(renderer.view);
 //project vars
 var ww = canvas.width = window.innerWidth;
 var wh = canvas.height = window.innerHeight;
+
+console.log(wh);
 const GRID_SIZE = 25;
 const fractionSizeX = Math.floor(ww / GRID_SIZE);
 const ALCO_AMOUNT = 588;

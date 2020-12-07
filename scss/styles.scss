@@ -91,6 +91,20 @@ h3 {
     top: 50px;
     z-index: 1;
   }
+
+  #chart {
+    height: 100%;
+
+    //#scene {
+    //  height: 100vh;
+    //  z-index: 10;
+    //  @media(hover: none) and (orientation: portrait) {
+    //    height: 50vh;
+    //    z-index: 1;
+    //  }
+    //
+    //}
+  }
 }
 
 .scroll__text {
