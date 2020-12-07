@@ -57,7 +57,7 @@ h3 {
   z-index: 10; }
   @media (hover: none) and (orientation: portrait) {
     .scroll__graphic {
-      height: 50vh;
+      height: 70vh;
       top: 50px;
       z-index: 1; } }
   .scroll__graphic #chart {
