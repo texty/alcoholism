@@ -19,7 +19,7 @@ var ctx = canvas.getContext("2d");
 
 
 var renderer = new PIXI.Application({
-    width:  window.innerWidth,
+    width:  window.innerWidth < 800 ? window.innerWidth * 0.9 : window.innerWidth,
     height:  window.innerWidth < 800 ? window.innerHeight * 0.7 : window.innerHeight,
     setInteractive: true,
     antialias: true,
