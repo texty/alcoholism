@@ -13,14 +13,17 @@ const redHex = '#ed6746';
 //pixi vars
 const stage = new PIXI.Container();
 var blurFilter1 = new PIXI.filters.BlurFilter();
+var chartConteiner = document.getElementById("chart").getBoundingClientRect();
 var canvas = document.getElementById("scene");
 var ctx = canvas.getContext("2d");
 
 
 
 var renderer = new PIXI.Application({
-    width:  window.innerWidth < 800 ? window.innerWidth * 0.9 : window.innerWidth,
-    height:  window.innerWidth < 800 ? window.innerHeight * 0.7 : window.innerHeight,
+    // width:  window.innerWidth < 800 ? window.innerWidth * 0.9 : window.innerWidth,
+    // height:  window.innerWidth < 800 ? (window.innerHeight * 0.7) : window.innerHeight,
+    width: chartConteiner.width,
+    height: chartConteiner.height,
     setInteractive: true,
     antialias: true,
     backgroundColor: 0x252525
@@ -31,7 +34,7 @@ document.getElementById("chart").append(renderer.view);
 
 //project vars
 var ww = canvas.width = window.innerWidth;
-var wh = canvas.height = window.innerHeight;
+var wh = canvas.height = window.innerHeight < 800 ? window.innerHeight * 0.7 : window.innerHeight;
 
 console.log(wh);
 const GRID_SIZE = 25;
