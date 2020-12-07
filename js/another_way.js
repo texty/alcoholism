@@ -643,10 +643,10 @@ function init() {
 init();
 
 
-    window.onresize = function (event){
-        "use strict";
-        window.location.reload();
-    };
+    // window.onresize = function (event){
+    //     "use strict";
+    //     window.location.reload();
+    // };
     //     var w = window.innerWidth;
     //     var h = window.innerHeight;
     //     console.log(renderer.view.style);
