@@ -62,8 +62,7 @@ h3 {
       z-index: 1; } }
   .scroll__graphic #chart {
     height: 100%;
-    width: 90%;
-    margin: auto; }
+    width: 100%; }
 
 .scroll__text {
   grid-column: 1/3;
