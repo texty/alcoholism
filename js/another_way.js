@@ -118,7 +118,7 @@ function drawPicture(){
 
 
         if(i <= points.length) {
-            TweenMax.to(dude, 1, {x: xPos, y: yPos});
+            TweenMax.to(dude, 1, {x: xPos, y: yPos, tint: whiteColor});
 
         } else if(i > points.length) {
             let sprite = new PIXI.Graphics();
