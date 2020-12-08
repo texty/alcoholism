@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap");
 @font-face {
   font-family: 'ProximaNova';
   src: url("../font/proxima_regular/proxima-nova-regular.eot");
@@ -78,6 +79,10 @@ h3 {
   .scroll__text .step {
     margin-top: 80vh;
     margin-bottom: 50vh; }
+  .scroll__text .step#last {
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 100vh; }
   .scroll__text .step div {
     padding: 20px;
     line-height: 1.6;

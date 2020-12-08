@@ -5,7 +5,10 @@ var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
 
 
 const fontFamily = 'ProximaNova, sans-serif';
-const fontSize = 20;
+const fontSize = 18;
+const titleFontSize = 30;
+const titleFontFamily = "Roboto Mono, monospace";
+
 const whiteColor = 0xe6e6e6;
 const redColor = 0xed6746;
 const redHex = '#ed6746';
@@ -41,7 +44,7 @@ const fractionSizeX = Math.floor(ww / GRID_SIZE);
 const ALCO_AMOUNT = 588;
 const xPosCoeff = 1;
 //TODO: зробити інший barChartPadding для мобільних
-var barChartPadding = ww > 1200 ? ww/3 : 100;
+var barChartPadding = window.innerWidth > 1200 ? ww/4 : ww/6;
 
 
 var points = [];
@@ -92,7 +95,7 @@ function drawScene() {
 }
 
 function drawPicture(){
-    const imgW = window.innerWidth > 1000 ? 900 : window.innerWidth * 0.6;
+    const imgW = window.innerWidth * 0.6;
     const imgStart = window.innerWidth/5;
     const img = document.getElementById('img');
     ctx.drawImage(img, imgStart, 100, imgW,  imgW/1.5);
@@ -317,7 +320,7 @@ function step_02(){
     //малюємо підписи
     for(let k = 0; k < chart1_bars.length; k++){
         let item = chart1_bars[k];
-        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: fontFamily, fill: item.fill });
+        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: item.fill });
         label.position.x = barChartPadding;
         label.position.y = 50 + (k * 50) + 10;
         label.alpha = 0;
@@ -326,7 +329,7 @@ function step_02(){
         TweenMax.to(label, 4, { alpha:1 });
     }
 
-    let chartTitle = new PIXI.Text("Причини психічних розладів (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    let chartTitle = new PIXI.Text("Причини психічних розладів (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
     chartTitle.position.y = 0;
     chartTitle.alpha = 1;
@@ -385,7 +388,7 @@ function step_04(){
     //малюємо підписи
     for(let k = 0; k < chart2_bars.length; k++){
         let item = chart2_bars[k];
-        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: fontFamily, fill: item.fill });
+        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: item.fill });
         label.position.x = barChartPadding;
         label.position.y = 50 + (k * 50) + 10;
         label.alpha = 0;
@@ -394,7 +397,7 @@ function step_04(){
         TweenMax.to(label, 4, { alpha:1 });
     }
 
-    let chartTitle = new PIXI.Text("Розлади через вживання алкоголю (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    let chartTitle = new PIXI.Text("Розлади через вживання алкоголю (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
     chartTitle.position.y = 0;
     chartTitle.alpha = 1;
@@ -467,7 +470,7 @@ function step_06(){
     //малюємо підписи
     for(let k = 0; k < chart3_bars.length; k++){
         let item = chart3_bars[k];
-        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: fontFamily, fill: item.fill });
+        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: item.fill });
         label.position.x = barChartPadding;
         label.position.y = 50 + (k * 50) + 10;
         // label.alpha = 0;
@@ -476,7 +479,7 @@ function step_06(){
         TweenMax.to(label, 4, { alpha:1 });
     }
 
-    let chartTitle = new PIXI.Text("Деякі причини смертності (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    let chartTitle = new PIXI.Text("Деякі причини смертності (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
     chartTitle.position.y = 0;
     chartTitle.alpha = 1;
@@ -550,7 +553,7 @@ function step_07_2() {
     //малюємо підписи
     for(let k = 0; k < chart4_bars.length; k++){
         let item = chart4_bars[k];
-        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: fontFamily, fill: whiteColor });
+        label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: whiteColor });
         label.position.x = barChartPadding;
         label.position.y = 50 + (k * 50) + 10;
         label.alpha = 0;
@@ -559,7 +562,7 @@ function step_07_2() {
         TweenMax.to(label, 4, { alpha:1 });
     }
 
-    let chartTitle = new PIXI.Text("Як саме вбиває алкоголь (2019 р.)", {fontSize: 35,  fontFamily: fontFamily, fill: "lightgrey" });
+    let chartTitle = new PIXI.Text("Як саме вбиває алкоголь (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
     chartTitle.position.y = 0;
     chartTitle.alpha = 1;
