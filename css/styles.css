@@ -55,7 +55,7 @@ h3 {
   left: 0;
   max-height: 100vh;
   z-index: 10; }
-  @media (hover: none) and (orientation: portrait) {
+  @media (hover: none) {
     .scroll__graphic {
       height: 70vh;
       top: 50px;
@@ -82,7 +82,7 @@ h3 {
     padding: 20px;
     line-height: 1.6;
     background-color: rgba(34, 34, 34, 0.9); }
-    @media (hover: none) and (orientation: portrait) {
+    @media (hover: none) {
       .scroll__text .step div {
         background-color: rgba(34, 34, 34, 0.9); } }
   .scroll__text p {
