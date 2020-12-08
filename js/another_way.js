@@ -36,13 +36,11 @@ document.getElementById("chart").append(renderer.view);
 var ww = canvas.width = window.innerWidth;
 var wh = canvas.height = window.innerHeight < 800 ? window.innerHeight * 0.7 : window.innerHeight;
 
-console.log(wh);
 const GRID_SIZE = 25;
 const fractionSizeX = Math.floor(ww / GRID_SIZE);
 const ALCO_AMOUNT = 588;
 const xPosCoeff = 1;
 //TODO: зробити інший barChartPadding для мобільних
-console.log(ww);
 var barChartPadding = ww > 1200 ? ww/3 : 100;
 
 
@@ -94,40 +92,56 @@ function drawScene() {
 }
 
 function drawPicture(){
-    // document.getElementById('img').src = 'img/vodka.svg';
     const img = document.getElementById('img');
-
-
-    ctx.drawImage(img, ww/4, wh/6);
+    ctx.drawImage(img, 200, 100);
     var data = ctx.getImageData(0, 0, ww, wh).data;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
+    //сюди зберігаємо позиції точок на зображені
     const imgPosArr = [];
-
-
-
     for (let i = 0; i < ww; i += Math.round(ww / 250)) {
         for (var j = 0; j < wh; j += Math.round(ww / 250)) {
             if (data[((i + j * ww) * 4) + 3] > 250) {
-                    imgPosArr.push([{ x:i, y:j, level: 1 }]);
-               }
-            }
-        }
-    //document.getElementById("img").src = "";
-
-    for(let i = 0; i < points.length; i++){
-        let dude = points[i];
-        if(i < imgPosArr.length) {
-            let xPos = imgPosArr[i][0].x;
-            let yPos = imgPosArr[i][0].y;
-            TweenMax.to(dude, 1, {x: xPos, y: yPos});
-        } else {
-           // dude.alpha = 0;
+                imgPosArr.push([{ x:i, y:j }]);
+           }
         }
     }
 
 
+    console.log(imgPosArr.length);
+    console.log(points.length);
+    //тепер переносимо точки на позиції зображення
+    for(let i = 0; i < imgPosArr.length ; i++){
+        let dude = points[i];
+        let xPos = imgPosArr[i][0].x;
+        let yPos = imgPosArr[i][0].y;
+
+        if(imgPosArr.length > points.length && i <= points.length) {
+            TweenMax.to(dude, 1, {x: xPos, y: yPos});
+
+        } else if(imgPosArr.length > points.length && i > points.length) {
+            let sprite = new PIXI.Graphics();
+            sprite.speed = 2 + Math.random() * 2;
+            sprite.lineStyle(0); //
+            sprite.beginFill(whiteColor, 1);
+            sprite.drawRect(0, 0, 4, 4);
+            sprite.endFill();
+            sprite.info = [{ x: xPos, y: yPos, level: 2 }];
+            points.push(sprite);
+            renderer.stage.addChild(sprite);
+            sprite.position.x = xPos;
+            sprite.position.y = yPos;
+
+        } else if(imgPosArr.length < points.length && i <= imgPosArr.length) {
+            TweenMax.to(dude, 1, {x: xPos, y: yPos});
+
+        } else if(imgPosArr.length < points.length && i > imgPosArr.length){
+            points[i].alpa = 0;
+        }
+    }
+
+    console.log(points.length);
 
 }
 
@@ -530,8 +544,7 @@ function step_07_2() {
         }
     }
 
-    console.log(points.length);
-    console.log(chart4_bars);
+
 
     //малюємо підписи
     for(let k = 0; k < chart4_bars.length; k++){
