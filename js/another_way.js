@@ -95,7 +95,7 @@ function drawPicture(){
     const imgW = window.innerWidth > 1000 ? 900 : window.innerWidth * 0.6;
     const imgStart = window.innerWidth/5;
     const img = document.getElementById('img');
-    ctx.drawImage(img, imgStart, 100, imgW,  window.innerHeight/2);
+    ctx.drawImage(img, imgStart, 100, imgW,  imgW/1.5);
     var data = ctx.getImageData(0, 0, ww, wh).data;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -116,10 +116,11 @@ function drawPicture(){
         let xPos = imgPosArr[i][0].x;
         let yPos = imgPosArr[i][0].y;
 
-        if(imgPosArr.length > points.length && i <= points.length) {
+
+        if(i <= points.length) {
             TweenMax.to(dude, 1, {x: xPos, y: yPos});
 
-        } else if(imgPosArr.length > points.length && i > points.length) {
+        } else if(i > points.length) {
             let sprite = new PIXI.Graphics();
             sprite.speed = 2 + Math.random() * 2;
             sprite.lineStyle(0); //
@@ -132,15 +133,16 @@ function drawPicture(){
             sprite.position.x = xPos;
             sprite.position.y = yPos;
 
-        } else if(imgPosArr.length < points.length && i <= imgPosArr.length) {
-            TweenMax.to(dude, 1, {x: xPos, y: yPos});
-
-        } else if(imgPosArr.length < points.length && i > imgPosArr.length){
-            points[i].alpa = 0;
         }
     }
 
-    console.log(points.length);
+    if(imgPosArr.length < points.length){
+        for(let i = imgPosArr.length; i < points.length ; i++){
+            let dude = points[i];
+            dude.alpha = 0;
+        }
+    }
+
 
 }
 
