@@ -92,8 +92,10 @@ function drawScene() {
 }
 
 function drawPicture(){
+    const imgW = window.innerWidth > 1000 ? 900 : window.innerWidth * 0.6;
+    const imgStart = window.innerWidth/5;
     const img = document.getElementById('img');
-    ctx.drawImage(img, 200, 100);
+    ctx.drawImage(img, imgStart, 100, imgW,  window.innerHeight/2);
     var data = ctx.getImageData(0, 0, ww, wh).data;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
@@ -108,9 +110,6 @@ function drawPicture(){
         }
     }
 
-
-    console.log(imgPosArr.length);
-    console.log(points.length);
     //тепер переносимо точки на позиції зображення
     for(let i = 0; i < imgPosArr.length ; i++){
         let dude = points[i];
@@ -675,10 +674,10 @@ function init() {
 init();
 
 
-    window.onresize = function (event){
-        "use strict";
-        window.location.reload();
-    };
+    // window.onresize = function (event){
+    //     "use strict";
+    //     window.location.reload();
+    // };
     //     var w = window.innerWidth;
     //     var h = window.innerHeight;
     //     console.log(renderer.view.style);
