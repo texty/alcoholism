@@ -94,34 +94,40 @@ function drawScene() {
 }
 
 function drawPicture(){
+    // document.getElementById('img').src = 'img/vodka.svg';
     const img = document.getElementById('img');
-    ctx.drawImage(img, ww/3, wh/4);
+
+
+    ctx.drawImage(img, ww/4, wh/6);
     var data = ctx.getImageData(0, 0, ww, wh).data;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+
+    const imgPosArr = [];
+
+
+
     for (let i = 0; i < ww; i += Math.round(ww / 250)) {
         for (var j = 0; j < wh; j += Math.round(ww / 250)) {
             if (data[((i + j * ww) * 4) + 3] > 250) {
-                const sprite = new PIXI.Graphics();
-                sprite.speed = 2 + Math.random() * 2;
-                sprite.lineStyle(0); //
-                sprite.beginFill(whiteColor, 1);
-                sprite.drawRect(0, 0, 4, 4);
-                sprite.endFill();
-                sprite.info = [{ x:i, y:j, level: 1 }];
-                points.push(sprite);
-                renderer.stage.addChild(sprite);
-
-                sprite.position.x = Math.random() * window.innerWidth;
-                sprite.position.y = Math.random() * window.innerHeight;
-
-                let xPos= sprite.info[0].x;
-                let yPos= sprite.info[0].y;
-                TweenMax.to(sprite, 5, {x: xPos, y: yPos });
-
-
+                    imgPosArr.push([{ x:i, y:j, level: 1 }]);
+               }
             }
         }
+    //document.getElementById("img").src = "";
+
+    for(let i = 0; i < points.length; i++){
+        let dude = points[i];
+        if(i < imgPosArr.length) {
+            let xPos = imgPosArr[i][0].x;
+            let yPos = imgPosArr[i][0].y;
+            TweenMax.to(dude, 1, {x: xPos, y: yPos});
+        } else {
+           // dude.alpha = 0;
+        }
     }
+
+
 
 }
 
@@ -134,6 +140,17 @@ setTimeout(function(){
     TweenMax.to(subtitle, 5, {opacity: 1 });
 
 }, 2000);
+
+
+function step_01_1(){
+
+    for(let i = 0; i < points.length; i++){
+        let dude = points[i];
+        let xPos = Math.random() * window.innerWidth;
+        let yPos = Math.random() * window.innerHeight;
+        TweenMax.to(dude, 1, {x: xPos, y: yPos });
+    }
+}
 
 
 function step_00() {
@@ -539,7 +556,6 @@ function step_07_2() {
     for(let i = 0; i < chart4_bars.length; i++){
         let item = chart4_bars[i];
         for(let j = item.start; j <= item.end; j++){
-            console.log(j);
             let xpos = j * xPosCoeff;
             let padding = item.start * xPosCoeff;
             points[j].alpha = 1;
@@ -589,10 +605,13 @@ function handleStepEnter(r) {
         step_00()
     }
     if(r.index === 1) {
-        step_01();
+        step_01_1();
     }
     if(r.index === 2){
-        // drawPicture()
+        drawPicture();
+    }
+    if(r.index === 4){
+        step_01();
     }
     if(r.index === 5) {
         step_05();
@@ -643,10 +662,10 @@ function init() {
 init();
 
 
-    // window.onresize = function (event){
-    //     "use strict";
-    //     window.location.reload();
-    // };
+    window.onresize = function (event){
+        "use strict";
+        window.location.reload();
+    };
     //     var w = window.innerWidth;
     //     var h = window.innerHeight;
     //     console.log(renderer.view.style);
