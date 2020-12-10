@@ -81,7 +81,7 @@ function drawScene() {
                 sprite.speed = 2 + Math.random() * 2;
                 sprite.lineStyle(0); //
                 sprite.beginFill(whiteColor, 1);
-                sprite.drawRect(0, 0, 2, 2);
+                sprite.drawRect(0, 0, 3, 3);
                 sprite.endFill();
                 sprite.info = [{ x:i, y:j, level: 1 }];
                 points.push(sprite);
@@ -139,7 +139,7 @@ function drawPicture(img){
             sprite.speed = 2 + Math.random() * 2;
             sprite.lineStyle(0); //
             sprite.beginFill(whiteColor, 1);
-            sprite.drawRect(0, 0, 2, 2);
+            sprite.drawRect(0, 0, 3, 3);
             sprite.endFill();
             sprite.info = [{ x: xPos, y: yPos, level: 2 }];
             points.push(sprite);
@@ -214,7 +214,7 @@ function step_01() {
             sprite.speed = 2 + Math.random() * 2;
             sprite.lineStyle(0); //
             sprite.beginFill(whiteColor, 1);
-            sprite.drawRect(0, 0, 2, 2);
+            sprite.drawRect(0, 0, 3, 3);
             sprite.endFill();
             sprite.info = [{ level: 2 }];
             points.push(sprite);
