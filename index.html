@@ -5,6 +5,8 @@
     <title>Title</title>
 
     <link href="css/styles.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;1,200;1,300;1,400;1,500&display=swap" rel="stylesheet">
@@ -21,42 +23,30 @@
     <script src="https://cdn.jsdelivr.net/npm/pixi-filters@latest/dist/pixi-filters.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
 </head>
-<style>
-
-    body {
-        background-color: #252525;
-    }
-
-    #chart {
-        width: 100%;
-        /*height: 100vh;*/
-    }
-    canvas {
-        /*height: 100vh;*/
-        width: 100%;
-
-    }
-
-    #scene {
-        height: 1vh;
-    }
-
-
-</style>
-
 <body>
-<!--<button id="button0">show matrix</button>-->
-<!--<button id="button1">show alco</button>-->
-<!--<button id="button2">show barChart</button>-->
-<!--<button id="button3">show image</button>-->
-<!--<canvas id="scene"></canvas>-->
 
-<!--</div>-->
-<header style="">
-    <h3 id="subtitle" style="">У 2019 р. понад півмільйони українців лікувались від психічних розладів, спричинених вживанням алкоголю</h3>
+<header>
+    <a class="texty-logo" href="https://texty.org.ua/">
+        <img class="desktop-only" src="img/white_logo.svg" alt="Тексти.org.ua"/>
+    </a>
+
+    <nav class="rubrics-container">
+        <div class="rubric r1"><a href="https://texty.org.ua/theme/koronavirus-najvazhlyvishe/"><span>КОРОНАВІРУС</span></a></div>
+        <div class="rubric r2"><a href="https://texty.org.ua/tag/dezinformatsija/"><span>#Інфовійна</span></a></div>
+        <div class="rubric r3"></div>
+    </nav>
+    <div class="soc">
+        <a href="https://www.facebook.com/sharer/sharer.php?u=https://texty.org.ua/d/2020/covid-19/" target="_blank" class="share-btn">
+            <i class="fab fa-facebook-square"></i></a>
+        <a href="https://twitter.com/intent/tweet?text=https://texty.org.ua/d/2020/covid-19/" target="_blank" class="share-btn">
+            <i class="fab fa-twitter-square"></i></a>
+    </div>
 </header>
 
-<!--<p class="text">За даними Служби психічного здоровʼя у 2019 році лікування у закдадах психіатричної допомоги пройшло понад 1 млн 700 тис. українців, майже третина з них через психічні розлади, повʼяазні із вживанням алкоголю</p>-->
+
+<div id="subtitle">
+    <h3 >У 2019 р. понад півмільйони українців лікувались від психічних розладів, спричинених вживанням алкоголю</h3>
+</div>
 
 <section id='scroll' class="desktop-only">
     <div class='scroll__graphic sticky'>
@@ -275,8 +265,72 @@
     <p> Треба постійно, з якими б ти успіхами не вийшов з реабілітації, пам’ятати, що це не кінець шляху і цьому шляху не буде кінця.</p>
 
 
+    <div class="donate-us">
+        <a class="donate-button" href="https://www.liqpay.ua/api/3/checkout?data=eyJ2ZXJzaW9uIjozLCJhY3Rpb24iOiJwYXlkb25hdGUiLCJwdWJsaWNfa2V5IjoiaTc2NjUwNTYyODI3IiwiYW1vdW50IjoiMTUwIiwiY3VycmVuY3kiOiJVQUgiLCJkZXNjcmlwdGlvbiI6ItCf0L7QttC10YDRgtCy0LAiLCJ0eXBlIjoiZG9uYXRlIiwibGFuZ3VhZ2UiOiJ1ayJ9&signature=tTFrEUyI4WV5l3N7G%2BYg5keUaXU%3D" target="_blank">
+            <p class="donate-p">Пожертвувати</p></a>
+        <p>TEXTY.ORG.UA — незалежне видання без навʼязливої реклами й замовних матеріалів. Щоб працювати далі, нам потрібна ваша підтримка.
+            <a href="https://texty.org.ua/support/#subscription">Також ви можете зробити пожертву щомісячною</a></p>
+    </div>
+
 </section>
 
+<footer>
+    <div id="logo-copyright">
+        <a class="texty-logo" href="/">
+            <img class="desktop-only" src="img/white_logo.svg" alt="Тексти.org.ua"/>
+
+        </a>
+        <div class="copyright">
+            <p>&copy; 2010—2020 Texty.org.ua</p>
+        </div>
+
+        <p id="license">Матеріали ТЕКСТИ.org.ua можна використовувати згідно ліцензії <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons із зазначенням авторства, CC BY</a> (переклад ліцензії <a href="https://creativecommons.org/licenses/by/4.0/legalcode.uk" target="_blank">українською</a>). Велике прохання ставити гіперпосилання в першому чи другому абзаці вашого матеріалу.</p>
+    </div>
+
+    <div id="guide-block">
+        <ul class="links1">
+            <li><a href="https://texty.org.ua/articles/">Статті</a>
+                <a href="https://texty.org.ua/articles/feed.xml">(RSS)</a>
+            </li>
+            <li><a href="https://texty.org.ua/fragments/">Фрагменти</a>
+                <a href="https://texty.org.ua/fragments/feed.xml">(RSS)</a>
+            </li>
+            <li><a href="https://texty.org.ua/projects">Журналістика даних</a></li>
+            <li><a href="https://texty.org.ua/d/socio">Фальшиві соціологи</a></li>
+        </ul>
+
+        <ul class="links2">
+            <li><a href="https://fgz.texty.org/">Фейкогриз</a></li>
+            <li><a href="https://texty.org.ua/tag/dezinformatsija/">Дезінформація</a></li>
+            <li><a href="https://texty.org.ua/tag/eng/">#English</a></li>
+            <li><a href="https://texty.org.ua/archive-books/">Архів книг</a></li>
+        </ul>
+
+        <ul class="links3">
+            <li><a href="https://texty.org.ua/support" target="_blank">Підтримай нас!</a></li>
+            <li><a href="http://texty.org.ua/donate/#/" target="_blank" >Наш дата-арт</a></li>
+            <li><a href="https://texty.org.ua/tag/hrafik-dnja/">Графік Дня</a></li>
+            <li><a href="https://texty.org.ua/archive-blogs/">Архів блогів</a></li>
+        </ul>
+    </div>
+
+
+    <div id="social_buttons">
+        <p class="piece-title">Стежити:</p>
+        <a href="https://www.facebook.com/TEXTY.org.ua/" target="_blank">
+            <img src="img/facebook.png" alt="Тексти.org.ua - Facebook">
+        </a>
+        <a href="https://www.instagram.com/texty.org.ua/" target="_blank">
+            <img src="img/instagram.png" alt="Тексти.org.ua - Instagram">
+        </a>
+        <a href="https://telegram.me/textyorgua" target="_blank">
+            <img src="img/telegram.png" alt="Тексти.org.ua - Telegram">
+        </a>
+        <a href="https://twitter.com/textyorgua" target="_blank">
+            <img src="img/twitter.png" alt="Тексти.org.ua - Twitter">
+        </a>
+    </div>
+</footer>
 
 
 

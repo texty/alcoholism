@@ -1,42 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import "variables";
+@import "header";
+@import "donate";
 
-@font-face {
-  font-family: 'ProximaNova';
-  src: url('../font/proxima_regular/proxima-nova-regular.eot');
-  src: url('../font/proxima_regular/proxima-nova-regular.eot?#iefix') format('embedded-opentype'),
-  url('../font/proxima_regular/proxima-nova-regular.woff2') format('woff2'),
-  url('../font/proxima_regular/proxima-nova-regular.woff') format('woff'),
-  url('../font/proxima_regular/proxima-nova-regular.ttf') format('truetype'),
-  url('../font/proxima_regular/proxima-nova-regular.svg#youworkforthem') format('svg');
-  font-weight: 400;
-  font-style: normal;
-}
+@import "footer";
 
-//@font-face {
-//  font-family: 'ProximaNova';
-//  src: url('../font/proxima_bold/proxima-nova-bold.eot');
-//  src: url('../font/proxima_bold/proxima-nova-bold.eot?#iefix') format('embedded-opentype'),
-//  url('../font/proxima_bold/proxima-nova-bold.woff2') format('woff2'),
-//  url('../font/proxima_bold/proxima-nova-bold.woff') format('woff'),
-//  url('../font/proxima_bold/proxima-nova-bold.ttf') format('truetype'),
-//  url('../font/proxima_bold/proxima-nova-bold.svg#youworkforthem') format('svg');
-//  font-weight: 600;
-//  font-style: normal;
-//}
-
-$text-color: #e6e6e6;
 
 body {
+  background-color: #252525;
   font-family: 'Roboto Mono', monospace;
 }
 
-header {
+#subtitle {
   position: absolute;
   top: 50%;
   left: 0;
-  width: 100%;
-  display: flex;
+  display: block;
   z-index: 1000;
+  width: 100%;
+  margin: auto;
 }
 
 h3 {
@@ -92,19 +73,17 @@ h3 {
     z-index: 1;
   }
 
+  canvas {
+    width: 100%;
+  }
+
+  #scene {
+    height: 1vh;
+  }
+
   #chart {
     height: 100%;
     width: 100%;
-
-    //#scene {
-    //  height: 100vh;
-    //  z-index: 10;
-    //  @media(hover: none) and (orientation: portrait) {
-    //    height: 50vh;
-    //    z-index: 1;
-    //  }
-    //
-    //}
   }
 }
 
