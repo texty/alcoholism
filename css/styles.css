@@ -108,7 +108,8 @@ header {
   font-style: normal; }
 .donate-us {
   font-family: 'ProximaNova', sans-serif;
-  margin: 80px auto 30px auto; }
+  margin: 80px auto 30px auto;
+  max-width: 800px; }
   .donate-us hr {
     grid-column: 1/-1;
     margin: 20px 0; }
@@ -243,7 +244,7 @@ h3 {
 #scroll {
   position: relative;
   width: 100%;
-  margin: 0 0 100px auto;
+  margin: 0 0 50px auto;
   display: grid;
   grid-template-columns: 45% auto; }
   #scroll .buttons {
