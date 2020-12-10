@@ -99,6 +99,9 @@ h3 {
     .mobile-only {
       display: block; } }
 
+.mob-pic-wrapper {
+  margin: 30px auto 100px auto; }
+
 section#text {
   width: 60%;
   margin: auto; }
