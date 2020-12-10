@@ -98,6 +98,10 @@ h3 {
   @media (hover: none) {
     .mobile-only {
       display: block; } }
+  .mobile-only img {
+    width: 80%;
+    display: block;
+    margin: auto; }
 
 .mob-pic-wrapper {
   margin: 30px auto 100px auto; }

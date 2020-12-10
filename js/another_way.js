@@ -47,7 +47,7 @@ const fractionSizeX = Math.floor(ww / GRID_SIZE);
 const ALCO_AMOUNT = 588;
 const xPosCoeff = 1;
 //TODO: зробити інший barChartPadding для мобільних
-var barChartPadding = window.innerWidth > 1200 ? ww/4 + 50 : ww/6;
+var barChartPadding = window.innerWidth > 1200 ? ww/4 + 50 : ww/10;
 
 
 var points = [];
@@ -305,13 +305,13 @@ function step_02(){
         { content: "Органічні, включно із симптоматичними (287 998)", amount: 287, fill: "white" },
         { content: "Розумова відсталість (225 896)", amount: 226, fill: "white" },
         { content: "Шизофренія, шизотипові та маячні розлади (175 690)", amount: 175, fill: "white" },
-        { content: "Невротичні, пов’язані зі стресом, та соматоформні розлади (140 991)", amount: 141, fill: "white" },
+        { content: "Невротичні, пов’язані зі стресом, та соматоформні (140 991)", amount: 141, fill: "white" },
         { content: "Внаслідок вживання інших ПАР, зокрема наркотиків (107 597)", amount: 108, fill: "white" },
         { content: "Розлади психологічного розвитку (80 822)", amount: 81, fill: "white" },
         { content: "Розлади настрою, афективні розлади (47 170)", amount: 47, fill: "white" },
-        { content: "Розлади поведінки та емоцій, які починаються у дитячому віці (30 584)", amount: 30, fill: "white" },
+        { content: "Розлади поведінки та емоцій з дитинства (30 584)", amount: 30, fill: "white" },
         { content: "Розлади зрілої особистості та поведінки у дорослих (27 381)", amount: 27, fill: "white" },
-        { content: "Синдроми розладів поведінки, пов’язані з фізіологічними порушеннями (8 422)", amount: 8, fill: "white"},
+        { content: "Пов’язані з фізіологічними порушеннями (8 422)", amount: 8, fill: "white"},
         { content: "Неуточнений психічний розлад (424)", amount: 1, fill: "white"}
     ];
 
