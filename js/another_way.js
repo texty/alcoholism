@@ -6,6 +6,8 @@ var colors = ["#468966","#FFF0A5", "#FFB03B","#B64926", "#8E2800"];
 
 const fontFamily = 'ProximaNova, sans-serif';
 const fontSize = 18;
+
+
 const titleFontSize = 30;
 const titleFontFamily = "Roboto Mono, monospace";
 
@@ -16,20 +18,20 @@ const redHex = '#ed6746';
 //pixi vars
 const stage = new PIXI.Container();
 var blurFilter1 = new PIXI.filters.BlurFilter();
+const fractionSizeX = Math.floor(ww / GRID_SIZE);
+
 var chartConteiner = document.getElementById("chart").getBoundingClientRect();
 var canvas = document.getElementById("scene");
 var ctx = canvas.getContext("2d");
 
+
+/* забрати картинки для канваса і видалити */
 const deadImg = document.getElementById("dead");
 const glassImg = document.getElementById("glass");
-console.log(deadImg);
-console.log(glassImg);
 document.getElementById("dead").style.display = "none";
 document.getElementById("glass").style.display = "none";
 
 var renderer = new PIXI.Application({
-    // width:  window.innerWidth < 800 ? window.innerWidth * 0.9 : window.innerWidth,
-    // height:  window.innerWidth < 800 ? (window.innerHeight * 0.7) : window.innerHeight,
     width: chartConteiner.width,
     height: chartConteiner.height,
     setInteractive: true,
@@ -45,7 +47,6 @@ var ww = canvas.width = window.innerWidth;
 var wh = canvas.height = window.innerHeight < 800 ? window.innerHeight * 0.7 : window.innerHeight;
 
 const GRID_SIZE = 25;
-const fractionSizeX = Math.floor(ww / GRID_SIZE);
 const ALCO_AMOUNT = 588;
 const xPosCoeff = 1;
 //TODO: зробити інший barChartPadding для мобільних
