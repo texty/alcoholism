@@ -235,6 +235,10 @@ h3 {
   width: 50%;
   margin: auto;
   font-weight: normal; }
+  @media (hover: none) {
+    h3 {
+      width: 90%;
+      font-size: 25px; } }
 
 #subtitle {
   opacity: 0; }
@@ -333,7 +337,6 @@ section#text {
     color: #d5d5d5; }
     @media (hover: none) {
       section#text p {
-        font-size: 20px;
         width: 80%;
         margin: 10px auto; } }
   section#text p.person {

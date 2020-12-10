@@ -27,6 +27,11 @@ h3 {
   width: 50%;
   margin: auto;
   font-weight: normal;
+  @media(hover: none) {
+    width: 90%;
+    font-size: 25px;
+  }
+
 }
 
 #subtitle {
@@ -162,7 +167,6 @@ section#text {
     font-size: 18px;
     color: #d5d5d5;
     @media(hover: none)  {
-      font-size: 20px;
       width: 80%;
       margin: 10px auto;
     }

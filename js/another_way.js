@@ -18,7 +18,7 @@ const redHex = '#ed6746';
 //pixi vars
 const stage = new PIXI.Container();
 var blurFilter1 = new PIXI.filters.BlurFilter();
-const fractionSizeX = Math.floor(ww / GRID_SIZE);
+// const fractionSizeX = Math.floor(ww / GRID_SIZE);
 
 var chartConteiner = document.getElementById("chart").getBoundingClientRect();
 var canvas = document.getElementById("scene");
