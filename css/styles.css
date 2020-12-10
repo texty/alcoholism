@@ -72,10 +72,9 @@ h3 {
   grid-row: 1/2;
   pointer-events: none;
   z-index: 100; }
-  @media (max-width: 800px) {
+  @media (hover: none) {
     .scroll__text {
-      width: 90%;
-      margin: auto; } }
+      display: none; } }
   .scroll__text .step {
     margin-top: 80vh;
     margin-bottom: 50vh; }
@@ -86,23 +85,42 @@ h3 {
   .scroll__text .step div {
     padding: 20px;
     line-height: 1.6;
-    background-color: rgba(34, 34, 34, 0.9); }
+    background-color: #222222; }
     @media (hover: none) {
       .scroll__text .step div {
-        background-color: rgba(34, 34, 34, 0.9); } }
+        background-color: #222222; } }
   .scroll__text p {
     font-size: 20px;
     color: #e6e6e6; }
 
+.mobile-only {
+  display: none; }
+  @media (hover: none) {
+    .mobile-only {
+      display: block; } }
+
 section#text {
   width: 60%;
   margin: auto; }
+  @media (hover: none) {
+    section#text {
+      width: 96%; } }
   section#text p {
     font-size: 18px;
     color: #d5d5d5; }
+    @media (hover: none) {
+      section#text p {
+        font-size: 20px;
+        width: 80%;
+        margin: 10px auto; } }
   section#text p.person {
     color: #ed6746;
     margin-top: 100px;
     font-size: 25px; }
+  section#text p.person.mihelson {
+    margin-top: 0; }
+    @media (hover: none) {
+      section#text p.person.mihelson {
+        margin-top: 100px; } }
 
 /*# sourceMappingURL=styles.css.map */
