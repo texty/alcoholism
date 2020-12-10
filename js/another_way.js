@@ -22,6 +22,8 @@ var ctx = canvas.getContext("2d");
 
 const deadImg = document.getElementById("dead");
 const glassImg = document.getElementById("glass");
+console.log(deadImg);
+console.log(glassImg);
 document.getElementById("dead").style.display = "none";
 document.getElementById("glass").style.display = "none";
 
@@ -102,6 +104,7 @@ function drawPicture(img){
     const imgStart = window.innerWidth/5;
 
 
+
     ctx.drawImage(img, imgStart, 0, imgW,  imgW/1.5);
     var data = ctx.getImageData(0, 0, ww, wh).data;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -111,11 +114,12 @@ function drawPicture(img){
     const imgPosArr = [];
     for (let i = 0; i < ww; i += Math.round(ww / 250)) {
         for (var j = 0; j < wh; j += Math.round(ww / 250)) {
-            if (data[((i + j * ww) * 4) + 3] > 250) {
+            if (data[((i + j * ww) * 4) + 3] > 10) {
                 imgPosArr.push([{ x:i, y:j }]);
            }
         }
     }
+
 
     //тепер переносимо точки на позиції зображення
     for(let i = 0; i < imgPosArr.length ; i++){

@@ -109,10 +109,13 @@ header {
 .donate-us {
   font-family: 'ProximaNova', sans-serif;
   margin: 80px auto 30px auto;
-  max-width: 800px; }
+  max-width: 800px;
+  width: 60%; }
   .donate-us hr {
     grid-column: 1/-1;
     margin: 20px 0; }
+  .donate-us p {
+    color: #E6E6E6; }
   .donate-us a.donate-button {
     text-decoration: none;
     cursor: pointer;
@@ -120,10 +123,11 @@ header {
     margin: auto;
     min-height: 50px;
     padding: 0 10px;
-    color: white;
+    color: #E6E6E6;
     background-color: #ed6746;
     display: flex; }
     .donate-us a.donate-button p {
+      width: max-content !important;
       letter-spacing: 1px;
       text-transform: uppercase;
       margin: auto !important;
