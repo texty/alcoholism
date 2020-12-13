@@ -115,7 +115,7 @@ function drawPicture(img){
     const imgPosArr = [];
     for (let i = 0; i < ww; i += Math.round(ww / 250)) {
         for (var j = 0; j < wh; j += Math.round(ww / 250)) {
-            if (data[((i + j * ww) * 4) + 3] > 3) {
+            if (data[((i + j * ww) * 4) + 3] > 10) {
                 imgPosArr.push([{ x:i, y:j }]);
            }
         }
