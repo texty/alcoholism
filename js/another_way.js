@@ -115,7 +115,7 @@ function drawPicture(img){
     const imgPosArr = [];
     for (let i = 0; i < ww; i += Math.round(ww / 250)) {
         for (var j = 0; j < wh; j += Math.round(ww / 250)) {
-            if (data[((i + j * ww) * 4) + 3] > 10) {
+            if (data[((i + j * ww) * 4) + 3] > 3) {
                 imgPosArr.push([{ x:i, y:j }]);
            }
         }
@@ -644,22 +644,22 @@ function handleStepEnter(r) {
     if (r.index === 4) {
         drawPicture(glassImg);
     }
-    if (r.index === 5) {
+    if (r.index === 6) {
         step_01();
     }
-    if (r.index === 6) {
+    if (r.index === 7) {
         step_05();
         step_06();
     }
-    if (r.index === 7) {
+    if (r.index === 8) {
         step_07();
         setTimeout(step_07_2(), 1000);
 
     }
-    if (r.index === 8) {
+    if (r.index === 9) {
         step_02();
     }
-    if (r.index === 9) {
+    if (r.index === 10) {
         step_03();
         setTimeout(step_04(), 1000)
     }
