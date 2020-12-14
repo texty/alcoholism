@@ -313,6 +313,9 @@ h3 {
     font-size: 20px;
     color: #e6e6e6; }
 
+.italic {
+  font-style: italic; }
+
 .mobile-only {
   display: none; }
   @media (hover: none) {
