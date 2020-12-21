@@ -235,7 +235,7 @@ h3 {
   width: 50%;
   margin: auto;
   font-weight: normal; }
-  @media (hover: none) {
+  @media (hover: none), (max-width: 812px) {
     h3 {
       width: 90%;
       font-size: 25px; } }
@@ -272,7 +272,7 @@ h3 {
   left: 0;
   max-height: 100vh;
   z-index: 10; }
-  @media (hover: none) {
+  @media (hover: none), (max-width: 812px) {
     .scroll__graphic {
       height: 70vh;
       top: 50px;
@@ -292,7 +292,7 @@ h3 {
   grid-row: 1/2;
   pointer-events: none;
   z-index: 100; }
-  @media (hover: none) {
+  @media (hover: none), (max-width: 812px) {
     .scroll__text {
       display: none; } }
   .scroll__text .step {
@@ -306,7 +306,7 @@ h3 {
     padding: 20px;
     line-height: 1.6;
     background-color: #222222; }
-    @media (hover: none) {
+    @media (hover: none), (max-width: 812px) {
       .scroll__text .step div {
         background-color: #222222; } }
   .scroll__text p {
@@ -315,7 +315,7 @@ h3 {
 
 .mobile-only {
   display: none; }
-  @media (hover: none) {
+  @media (hover: none), (max-width: 812px) {
     .mobile-only {
       display: block; } }
   .mobile-only img {
@@ -329,13 +329,13 @@ h3 {
 section#text {
   width: 60%;
   margin: auto; }
-  @media (hover: none) {
+  @media (hover: none), (max-width: 812px) {
     section#text {
       width: 96%; } }
   section#text p {
     font-size: 18px;
     color: #d5d5d5; }
-    @media (hover: none) {
+    @media (hover: none), (max-width: 812px) {
       section#text p {
         width: 80%;
         margin: 10px auto; } }
@@ -345,7 +345,7 @@ section#text {
     font-size: 25px; }
   section#text p.person.mihelson {
     margin-top: 0; }
-    @media (hover: none) {
+    @media (hover: none), (max-width: 812px) {
       section#text p.person.mihelson {
         margin-top: 100px; } }
 
