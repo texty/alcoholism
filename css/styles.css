@@ -319,7 +319,7 @@ h3 {
     .mobile-only {
       display: block; } }
   .mobile-only img {
-    width: 80%;
+    width: 100%;
     display: block;
     margin: auto; }
 
