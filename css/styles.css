@@ -320,6 +320,7 @@ h3 {
       display: block; } }
   .mobile-only img {
     width: 100%;
+    max-width: 800px;
     display: block;
     margin: auto; }
 
