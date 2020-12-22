@@ -332,7 +332,7 @@ function step_02(){
         let item = chart1_bars[k];
         label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: item.fill });
         label.position.x = barChartPadding;
-        label.position.y = 150 + (k * 50) + 10;
+        label.position.y = 90 + (k * 40) + 10;
         label.alpha = 0;
         labels.push(label);
         renderer.stage.addChild(label);
@@ -341,7 +341,7 @@ function step_02(){
 
     let chartTitle = new PIXI.Text("Причини психічних розладів (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
-    chartTitle.position.y = 100;
+    chartTitle.position.y = 40;
     chartTitle.alpha = 1;
     labels.push(chartTitle);
     renderer.stage.addChild(chartTitle);
@@ -358,7 +358,7 @@ function step_02(){
             }
             points[j].alpha = 1;
             TweenMax.to(points[j].scale,1,{ x:2, y:2});
-            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 100 + (i+2) * 50 - 10 });
+            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 50 + (i+2) * 40 - 10 });
         }
     }
 }
@@ -400,7 +400,7 @@ function step_04(){
         let item = chart2_bars[k];
         label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: item.fill });
         label.position.x = barChartPadding;
-        label.position.y = 150 + (k * 50) + 10;
+        label.position.y = 90 + (k * 40) + 10;
         label.alpha = 0;
         labels.push(label);
         renderer.stage.addChild(label);
@@ -409,7 +409,7 @@ function step_04(){
 
     let chartTitle = new PIXI.Text("Розлади через вживання алкоголю (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
-    chartTitle.position.y = 100;
+    chartTitle.position.y = 40;
     chartTitle.alpha = 1;
     labels.push(chartTitle);
     renderer.stage.addChild(chartTitle);
@@ -425,7 +425,7 @@ function step_04(){
             points[j].alpha = 1;
             points[j].tint = redColor;
             // TweenMax.to(points[j].scale,1,{ x:3, y:3});
-            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 100+(i+2) * 50 - 10 });
+            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 50+(i+2) * 40 - 10 });
         }
     }
 
@@ -482,7 +482,7 @@ function step_06(){
         let item = chart3_bars[k];
         label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: item.fill });
         label.position.x = barChartPadding;
-        label.position.y = 150 + (k * 50) + 10;
+        label.position.y = 90 + (k * 40) + 10;
         // label.alpha = 0;
         labels.push(label);
         renderer.stage.addChild(label);
@@ -491,7 +491,7 @@ function step_06(){
 
     let chartTitle = new PIXI.Text("Деякі причини смертності (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
-    chartTitle.position.y = 100;
+    chartTitle.position.y = 40;
     chartTitle.alpha = 1;
     labels.push(chartTitle);
     renderer.stage.addChild(chartTitle);
@@ -506,7 +506,7 @@ function step_06(){
             //points[j].alpha = 1;
             points[j].tint = item.fill;
             TweenMax.to(points[j].scale,1,{ x:2, y:2});
-            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 100+ (i+2) * 50 - 10,  alpha: 0.8 });
+            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 50 + (i+2) * 40 - 10,  alpha: 0.8 });
         }
     }
 
@@ -565,7 +565,7 @@ function step_07_2() {
         let item = chart4_bars[k];
         label = new PIXI.Text(item.content, {fontSize: fontSize,  fontFamily: titleFontFamily, fill: whiteColor });
         label.position.x = barChartPadding;
-        label.position.y = 150 + (k * 50) + 10;
+        label.position.y = 90 + (k * 40) + 10;
         label.alpha = 0;
         labels.push(label);
         renderer.stage.addChild(label);
@@ -574,7 +574,7 @@ function step_07_2() {
 
     let chartTitle = new PIXI.Text("Як саме вбиває алкоголь (2019 р.)", {fontSize: titleFontSize,  fontFamily: titleFontFamily, fill: "lightgrey" });
     chartTitle.position.x = barChartPadding;
-    chartTitle.position.y = 100;
+    chartTitle.position.y = 40;
     chartTitle.alpha = 1;
     labels.push(chartTitle);
     renderer.stage.addChild(chartTitle);
@@ -587,7 +587,7 @@ function step_07_2() {
             let padding = item.start * xPosCoeff;
             points[j].alpha = 1;
             points[j].tint = redColor;
-            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 100+(i+2) * 50 - 10 });
+            TweenMax.to(points[j], 1,{ x: xpos + barChartPadding - padding, y: 50 + (i+2) * 40 - 10 });
         }
     }
 }
