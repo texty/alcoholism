@@ -350,4 +350,14 @@ section#text {
       section#text p.person.mihelson {
         margin-top: 100px; } }
 
+h5 {
+  color: #e6e6e6;
+  font-weight: normal;
+  text-align: center; }
+  h5 a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 2px; }
+
 /*# sourceMappingURL=styles.css.map */

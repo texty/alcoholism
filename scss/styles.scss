@@ -187,3 +187,16 @@ section#text {
   }
 }
 
+h5 {
+  color: $text-color;
+  font-weight: normal;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    border-bottom: 1px solid $text-color;
+    padding-bottom: 2px;
+  }
+}
+
